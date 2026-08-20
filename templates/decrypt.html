@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+Quantum Decryption Result
+</title>
+
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+⚛ QSC Defence System
+
+</div>
+
+
+<div>
+
+<a href="/dashboard">
+Dashboard
+</a>
+
+
+<a href="/receiver">
+Messages
+</a>
+
+
+<a href="/logout">
+Logout
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+
+
+<div class="card"
+style="margin:auto;max-width:700px;text-align:center;">
+
+
+
+<h1 class="title">
+
+🔓 Message Decrypted Successfully
+
+</h1>
+
+
+
+<div class="quantum">
+
+
+<h2>
+Quantum Authentication Verified
+</h2>
+
+
+<p class="status">
+
+SECURE CHANNEL ACTIVE
+
+</p>
+
+
+</div>
+
+
+
+<br>
+
+
+
+<h2>
+Received From
+</h2>
+
+
+<p>
+
+{{sender}}
+
+</p>
+
+
+
+
+<h2>
+Decrypted Classified Message
+</h2>
+
+
+
+<div style="
+background:#020b16;
+padding:25px;
+border-radius:15px;
+border:2px solid #00b4ff;
+font-size:20px;
+margin-top:20px;
+">
+
+
+{{message}}
+
+
+</div>
+
+
+
+
+<br>
+
+
+<p>
+
+Time:
+
+{{time}}
+
+</p>
+
+
+
+<a href="/receiver">
+
+<button>
+
+Back To Messages
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Secure Receive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Quantum Secure Defence Network</h1>
+
+    <h2>
+        Receiver Station :
+        <span style="color:cyan;">
+            {{ receiver }}
+        </span>
+    </h2>
+
+    <hr>
+
+    <h2>Secure Inbox</h2>
+
+    {% if messages %}
+
+    <table border="1" cellpadding="10" width="100%">
+
+        <tr>
+            <th>ID</th>
+            <th>Sender</th>
+            <th>Encrypted Message</th>
+            <th>Status</th>
+            <th>Attempts</th>
+            <th>Action</th>
+        </tr>
+
+        {% for msg in messages %}
+
+        <tr>
+
+            <td>{{ msg["id"] }}</td>
+
+            <td>{{ msg["sender"] }}</td>
+
+            <td style="max-width:350px;word-break:break-all;">
+                {{ msg["encrypted_message"] }}
+            </td>
+
+            <td>{{ msg["status"] }}</td>
+
+            <td>{{ msg["decrypt_attempts"] }}/3</td>
+
+            <td>
+
+                <form method="POST">
+
+                    <input
+                        type="hidden"
+                        name="id"
+                        value="{{ msg['id'] }}">
+
+                    {% if msg["decrypt_attempts"]|int < 3 %}
+
+                        <button type="submit">
+                            🔐 Decrypt
+                        </button>
+
+                    {% else %}
+
+                        <button disabled>
+                            🔒 Locked
+                        </button>
+
+                    {% endif %}
+
+                </form>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+        <h3>No Messages Received</h3>
+
+    {% endif %}
+
+    {% if decrypted_message %}
+
+    <hr>
+
+    <h2>Decrypted Message</h2>
+
+    <div class="card">
+
+        <p>{{ decrypted_message }}</p>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">
+
+        <button>Back To Dashboard</button>
+
+    </a>
+
+</div>
+
+</body>
+</html>

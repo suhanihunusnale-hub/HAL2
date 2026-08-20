@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Quantum Defence Login</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+</head>
+
+
+<body>
+
+
+<div class="login-container">
+
+
+<h1>
+⚛ Quantum Defence Network
+</h1>
+
+
+<form method="POST">
+
+
+<input 
+type="text"
+name="username"
+placeholder="Username"
+required>
+
+
+<input
+type="password"
+name="password"
+placeholder="Password"
+required>
+
+
+<select name="role">
+
+
+<option>Administrator</option>
+
+<option>Commander</option>
+
+<option>Field Officer</option>
+
+<option>Security Analyst</option>
+
+
+</select>
+
+
+
+<button>
+Secure Login
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</body>
+
+</html>

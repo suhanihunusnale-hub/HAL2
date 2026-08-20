@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Secure Message Transmission</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<div class="logo">
+⚛ QSC Defence System
+</div>
+
+
+<div>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/receiver">Receiver</a>
+
+<a href="/logs">Logs</a>
+
+<a href="/logout">Logout</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="container">
+{% if success %}
+
+<div class="alert-success">
+
+    ⚛ {{success}}
+
+</div>
+
+{% endif %}
+
+<h1 class="title">
+Secure Quantum Message Transmission
+</h1>
+
+
+
+<div class="card">
+
+
+<form method="POST">
+
+
+<h2>
+Select Receiver
+</h2>
+
+
+
+
+<label>Select Receiver</label>
+
+<select name="receiver" required>
+
+{% for user in receivers %}
+
+<option value="{{ user['username'] }}">
+    {{ user['username'] }} ({{ user['role'] }})
+</option>
+
+{% endfor %}
+
+</select>
+
+
+<h2>
+Classified Message
+</h2>
+
+
+
+<textarea
+
+name="message"
+
+rows="6"
+
+placeholder="Enter encrypted defence message..."
+
+required>
+
+</textarea>
+
+
+
+
+<button>
+
+Generate Quantum Key & Send
+
+</button>
+
+
+</form>
+
+
+
+</div>
+
+
+
+<div class="quantum">
+
+<h2>
+Quantum Security Layer
+</h2>
+
+<p>
+
+✓ BB84 Key Distribution
+
+<br>
+
+✓ AES Encryption
+
+<br>
+
+✓ Secure Defence Channel
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</body>
+
+</html>

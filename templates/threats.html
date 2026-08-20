@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+
+
+<title>Threat Monitoring</title>
+
+
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+⚛ QSC Defence System
+
+</div>
+
+
+
+<div>
+
+
+<a href="/dashboard">
+Dashboard
+</a>
+
+
+<a href="/logs">
+Logs
+</a>
+
+
+<a href="/logout">
+Logout
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+
+
+<h1 class="title">
+
+Quantum Threat Monitoring Center
+
+</h1>
+
+
+
+
+<div class="card">
+
+
+<h2>
+Live Security Scanner
+</h2>
+
+
+<p class="status">
+
+SYSTEM MONITORING ACTIVE
+
+</p>
+
+
+
+</div>
+
+
+
+{% if threats %}
+
+<div class="alert-threat">
+
+<h2>
+⚠ Security Alert
+</h2>
+
+<p>
+Threat analysis completed.
+Reason is displayed in the report below.
+</p>
+
+</div>
+
+{% endif %}
+
+<table>
+
+
+<tr>
+
+
+<th>
+Threat Type
+</th>
+
+
+<th>
+Severity
+</th>
+
+
+<th>
+Description
+</th>
+
+
+<th>
+Time
+</th>
+
+
+</tr>
+
+
+
+
+
+{% for t in threats %}
+
+
+
+<tr>
+
+
+<td>
+
+{{t['threat_type']}}
+
+</td>
+
+
+
+<td>
+
+
+{% if t['severity']=="HIGH" %}
+
+<span class="high">
+
+{{t['severity']}}
+
+</span>
+
+
+{% elif t['severity']=="MEDIUM" %}
+
+
+<span class="medium">
+
+{{t['severity']}}
+
+</span>
+
+
+
+{% else %}
+
+
+<span class="low">
+
+{{t['severity']}}
+
+</span>
+
+
+{% endif %}
+
+
+</td>
+
+
+
+<td>
+
+{{t['description']}}
+
+</td>
+
+
+<td>
+
+<strong>Reason:</strong>
+
+<br>
+
+{{t['description']}}
+
+</td>
+
+
+
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+</table>
+
+
+
+
+<div class="quantum">
+
+
+<h2>
+Threat Intelligence Engine
+</h2>
+
+
+<p>
+
+✓ Quantum interception detection
+
+<br>
+
+✓ Message integrity verification
+
+<br>
+
+✓ Unauthorized access monitoring
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</body>
+
+
+</html>

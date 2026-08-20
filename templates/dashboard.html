@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<div class="logo">
+⚛ QSC Defence System
+</div>
+
+
+<div>
+
+<a href="/dashboard">Home</a>
+
+<a href="/sender">Send</a>
+
+<a href="/receiver">Receive</a>
+
+<a href="/threats">Threats</a>
+
+<a href="/logs">Logs</a>
+
+<a href="/logout">Logout</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="container">
+
+
+<h1 class="title">
+
+Welcome {{username}}
+
+</h1>
+
+
+<h2>
+Role:
+{{role}}
+
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>
+Quantum Channel
+</h2>
+
+<p class="status">
+ACTIVE
+</p>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Encryption
+</h2>
+
+<p>
+AES + BB84 Quantum Key
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Security Status
+</h2>
+
+<p class="status">
+Protected
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="quantum">
+
+<h2>
+Quantum Communication Link
+</h2>
+
+<p>
+Secure quantum key exchange established
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

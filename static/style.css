@@ -1,0 +1,387 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+body{
+
+    background:#07111f;
+    color:#ffffff;
+    min-height:100vh;
+
+}
+
+
+/* Navigation */
+
+.navbar{
+
+    background:#020b16;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #00b4ff;
+
+}
+
+
+.logo{
+
+    color:#00b4ff;
+    font-size:25px;
+    font-weight:bold;
+
+}
+
+
+.navbar a{
+
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+
+}
+
+
+.navbar a:hover{
+
+    color:#00b4ff;
+
+}
+
+
+
+/* Login Page */
+
+.login-container{
+
+    width:400px;
+    margin:100px auto;
+    background:#0c1b2a;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 0 25px #00b4ff;
+
+}
+
+
+
+.login-container h1{
+
+    text-align:center;
+    color:#00b4ff;
+    margin-bottom:25px;
+
+}
+
+
+
+input,select,textarea{
+
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+
+    background:#07111f;
+    border:1px solid #00b4ff;
+
+    color:white;
+
+    border-radius:8px;
+
+}
+
+
+
+button{
+
+    width:100%;
+    padding:12px;
+
+    background:#0077ff;
+
+    border:none;
+
+    color:white;
+
+    font-size:16px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    background:#00b4ff;
+
+}
+
+
+
+/* Dashboard */
+
+
+.container{
+
+    padding:40px;
+
+}
+
+
+.title{
+
+    font-size:32px;
+    color:#00b4ff;
+
+}
+
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+
+
+.card{
+
+    background:#0c1b2a;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 0 15px #001f3f;
+
+    transition:0.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 25px #00b4ff;
+
+}
+
+
+
+.card h2{
+
+    color:#00b4ff;
+
+}
+
+
+
+.status{
+
+    color:#00ff88;
+
+    font-size:20px;
+
+}
+
+
+
+
+
+/* Tables */
+
+
+table{
+
+    width:100%;
+
+    margin-top:30px;
+
+    border-collapse:collapse;
+
+    background:#0c1b2a;
+
+}
+
+
+
+th{
+
+    background:#003566;
+
+    padding:15px;
+
+}
+
+
+
+td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border-bottom:1px solid #223;
+
+}
+
+
+
+/* Threat */
+
+
+.high{
+
+    color:red;
+
+    font-weight:bold;
+
+}
+
+
+.medium{
+
+    color:orange;
+
+    font-weight:bold;
+
+}
+
+
+
+.low{
+
+    color:#00ff88;
+
+}
+
+
+
+/* Quantum animation */
+
+
+.quantum{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border:2px solid #00b4ff;
+
+    border-radius:15px;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+
+0%{
+
+box-shadow:0 0 5px #00b4ff;
+
+}
+
+
+50%{
+
+box-shadow:0 0 30px #00b4ff;
+
+}
+
+
+100%{
+
+box-shadow:0 0 5px #00b4ff;
+
+}
+
+
+}
+.alert-success{
+
+    background:#063d25;
+
+    color:#00ff88;
+
+    padding:18px;
+
+    margin:20px auto;
+
+    max-width:600px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    border:2px solid #00ff88;
+
+    font-size:18px;
+
+    animation:showAlert 0.5s ease;
+
+    box-shadow:0 0 20px #00ff88;
+
+}
+
+
+@keyframes showAlert{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.alert-threat{
+
+background:#400000;
+
+border:2px solid red;
+
+padding:20px;
+
+border-radius:15px;
+
+text-align:center;
+
+margin:25px;
+
+color:white;
+
+box-shadow:0 0 20px red;
+
+}

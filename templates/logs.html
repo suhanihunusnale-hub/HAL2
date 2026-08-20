@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+
+
+<title>Audit Logs</title>
+
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+⚛ QSC Defence System
+
+</div>
+
+
+
+<div>
+
+<a href="/dashboard">
+Dashboard
+</a>
+
+
+<a href="/logout">
+Logout
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+
+<h1 class="title">
+
+Security Audit Logs
+
+</h1>
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+User
+</th>
+
+
+<th>
+Action
+</th>
+
+
+<th>
+Time
+</th>
+
+
+</tr>
+
+
+
+
+{% for log in logs %}
+
+
+<tr>
+
+
+<td>
+
+{{log['username']}}
+
+</td>
+
+
+
+<td>
+
+{{log['action']}}
+
+</td>
+
+
+
+<td>
+
+{{log['log_time']}}
+
+</td>
+
+
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>
