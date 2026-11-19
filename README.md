@@ -1,35 +1,134 @@
-# ⚛ QSC Defence System (HAL2)
+# ⚛️ QSC Defence System
+### Quantum-Inspired Secure Communication System
 
-A quantum-inspired secure messaging demo built with Flask. Simulates BB84 quantum key distribution for generating encryption keys, then uses those keys to encrypt/decrypt messages between users. Includes a threat monitor and audit log.
+A Flask-based secure messaging demonstration that simulates the **BB84 Quantum Key Distribution (QKD) protocol** to generate encryption keys and uses AES-based encryption for secure message exchange.
 
-## Features
-- BB84 quantum key distribution simulation
-- AES-based message encryption/decryption
-- Role-based login (Administrator, Commander, Field Officer, Security Analyst)
-- Sender/Receiver secure inbox
-- Threat detection monitor
-- Audit logging
+The system demonstrates quantum-inspired cryptographic concepts through a role-based communication platform with threat monitoring and audit logging.
 
-## Setup
+---
+
+## 🚀 Key Features
+
+- **BB84 Protocol Simulation:** Simulates quantum key distribution for encryption key generation.
+- **AES Encryption:** Encrypts and decrypts messages using generated keys.
+- **Role-Based Authentication:** Supports four user roles.
+- **Secure Messaging:** Sender and receiver communication through a secure inbox.
+- **Threat Monitoring:** Includes a threat detection monitoring interface.
+- **Audit Logging:** Maintains activity records for monitoring system operations.
+
+---
+
+## 👥 User Roles
+
+| Role | Access |
+|---|---|
+| Administrator | Administrative functions |
+| Commander | Commander-level access |
+| Field Officer | Field communication |
+| Security Analyst | Security monitoring |
+
+---
+
+## 🛠️ Technology Stack
+
+| Component | Technology |
+|---|---|
+| Backend | Python, Flask |
+| Database | SQLite |
+| Cryptography | AES |
+| Key Distribution | BB84 Simulation |
+| Frontend | HTML, CSS, JavaScript |
+
+---
+
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
 
 ```bash
-python3 -m venv venv
-venv\Scripts\activate        # Windows
+git clone https://github.com/suhanihunusnale-hub/HAL2.git
+cd HAL2
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 3. Activate the environment
+
+Windows:
+
+```powershell
+venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+### 4. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### 5. Run the application
+
+```bash
 python app.py
 ```
 
-Visit `http://127.0.0.1:5000`
+### 6. Open in browser
 
-## Demo Login Credentials
+```text
+http://127.0.0.1:5000
+```
 
-| Username | Password | Role |
-|---|---|---|
-| admin | admin123 | Administrator |
-| commander01 | cmd123 | Commander |
-| officer01 | off123 | Field Officer |
-| analyst01 | ana123 | Security Analyst |
+---
 
-## Notes
-- This is a demo/learning project — passwords are stored in plaintext, not for production use.
-- Database (`database.db`) auto-creates on first run if missing.
+## 🏗️ System Workflow
+
+1. User logs into the application.
+2. The system identifies the user's role.
+3. BB84 simulation generates a shared encryption key.
+4. AES-based encryption is used for message protection.
+5. The receiver accesses the message through the inbox.
+6. Threat monitoring and audit logging support security observation.
+
+---
+
+## 🔐 Security Considerations
+
+This is an educational demonstration, not a production-ready defence communication system.
+
+- BB84 is simulated in software; no physical quantum hardware is used.
+- Demo authentication uses plaintext passwords in the current implementation.
+- Production deployment requires secure password hashing, protected key management, secure sessions and additional security testing.
+- Do not use real military, classified or sensitive information.
+
+---
+
+## 🎯 Project Objective
+
+The objective is to demonstrate how concepts from quantum key distribution can be combined with conventional encryption to explore secure communication architectures.
+
+The project provides an educational environment for understanding BB84 simulation, AES-based encryption, authentication and security monitoring.
+
+---
+
+## 👩‍💻 Developer
+
+**Suhani Hunusnale**
+
+B.Tech Computer Science and Engineering  
+Specialization: Data Science
+
+GitHub: https://github.com/suhanihunusnale-hub
+
+---
+
+⭐ If you find this project interesting, consider giving the repository a star.
